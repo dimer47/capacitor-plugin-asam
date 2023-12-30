@@ -1,3 +1,6 @@
 export interface AsamPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  setASAM(options: { enable: boolean }): Promise<{ success: boolean }>;
+  enableASAM(): Promise<{ success: boolean }>;
+  disableASAM(): Promise<{ success: boolean }>;
+  isASAMEnabled(): Promise<{ enabled: boolean }>;
 }

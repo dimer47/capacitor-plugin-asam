@@ -9,10 +9,37 @@ import Capacitor
 public class AsamPlugin: CAPPlugin {
     private let implementation = Asam()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func setASAM(_ call: CAPPluginCall) {
+        let enable = call.getBool("enable") ?? false
+
+        implementation.setASAM(enable, completion: { success in
+            call.resolve([
+                "success": success
+            ])
+        })
+    }
+
+    @objc func enableASAM(_ call: CAPPluginCall) {
+        implementation.setASAM(true, completion: { success in
+            call.resolve([
+                "success": success
+            ])
+        })
+    }
+
+    @objc func disableASAM(_ call: CAPPluginCall) {
+        implementation.setASAM(false, completion: { success in
+            call.resolve([
+                "success": success
+            ])
+        })
+    }
+
+    @objc func isASAMEnabled(_ call: CAPPluginCall) {
+        implementation.isASAMEnabled { enabled in
+            call.resolve([
+                "enabled": enabled
+            ])
+        }
     }
 }
