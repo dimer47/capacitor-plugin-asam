@@ -1,4 +1,5 @@
-# capacitor-plugin-asam
+# Capacitor Plugin ASAM (Autonomous Single App Mode)
+**Only for iOS devices**
 
 Easily integrate Autonomous Single App Mode in your ios app, allowing it to control Single App Mode sessions for focused, distraction-free user experiences. Ideal for educational, testing, or kiosk applications.
 
@@ -7,6 +8,57 @@ Easily integrate Autonomous Single App Mode in your ios app, allowing it to cont
 ```bash
 npm install capacitor-plugin-asam
 npx cap sync
+```
+
+## Configuration
+To enable the Autonomous Single App Mode (ASAM) on iOS devices, administrators must utilize a Mobile Device Management (MDM) system or Apple Configurator. 
+
+These tools are essential for setting up and managing ASAM, as they provide the ability to create and deploy specific configuration profiles to iOS devices. 
+
+These profiles dictate which applications can run in ASAM, ensuring controlled and secure usage of the devices in environments like schools, businesses, or public kiosks. Without MDM or Apple Configurator, activating ASAM on iOS devices is not feasible.
+
+## Usage
+
+```typescript
+// import the plugin
+import {Asam} from "capacitor-plugin-asam";
+
+// --------------------
+// enable ASAM using setASAM
+
+let r = await Asam.setASAM({enable: true});
+if (!r.success)
+    console.error("Failed to enable ASAM");
+
+let isEnabled = (await Asam.isASAMEnabled()).enabled;
+console.log("ASAM is enabled: " + isEnabled);
+
+// --------------------
+// another way to enable ASAM using enableASAM
+
+r = await Asam.enableASAM();
+if (!r.success)
+    console.error("Failed to enable ASAM");
+
+isEnabled = (await Asam.isASAMEnabled()).enabled;
+console.log("ASAM is enabled: " + isEnabled);
+
+// --------------------
+// disable ASAM using disableASAM
+
+r = await Asam.disableASAM();
+if (!r.success)
+    console.error("Failed to disable ASAM");
+
+isEnabled = (await Asam.isASAMEnabled()).enabled;
+console.log("ASAM is enabled: " + isEnabled);
+
+// --------------------
+// another way to disable ASAM using setASAM
+
+r = await Asam.setASAM({enable: false});
+if (!r.success)
+    console.error("Failed to disable ASAM");
 ```
 
 ## API
