@@ -1,23 +1,25 @@
 # Capacitor Plugin ASAM (Autonomous Single App Mode)
-**Only for iOS devices**
+![Release : 1.0 ](https://img.shields.io/github/package-json/v/dimer47/capacitor-plugin-asam?color=red&style=flat-square) ![Last update](https://img.shields.io/github/last-commit/dimer47/capacitor-plugin-asam?color=yellow&label=Last%20update&style=flat-square) ![Dependency size](https://img.shields.io/bundlephobia/minzip/capacitor-plugin-asam?color=green&label=dependency%20size&style=flat-square) ![Repo size](https://img.shields.io/github/repo-size/dimer47/capacitor-plugin-asam?style=flat-square) ![Downloads](https://img.shields.io/npm/dt/capacitor-plugin-asam?style=flat-square) ![License](https://img.shields.io/github/license/dimer47/capacitor-plugin-asam?style=flat-square)
+
+**⚠️ Only for iOS devices**
 
 Easily integrate Autonomous Single App Mode in your ios app, allowing it to control Single App Mode sessions for focused, distraction-free user experiences. Ideal for educational, testing, or kiosk applications.
 
-## Install
+## 📍 Install
 
 ```bash
 npm install capacitor-plugin-asam
 npx cap sync
 ```
 
-## Configuration
+## ⚙️ Configuration
 To enable the Autonomous Single App Mode (ASAM) on iOS devices, administrators must utilize a Mobile Device Management (MDM) system or Apple Configurator. 
 
 These tools are essential for setting up and managing ASAM, as they provide the ability to create and deploy specific configuration profiles to iOS devices. 
 
 These profiles dictate which applications can run in ASAM, ensuring controlled and secure usage of the devices in environments like schools, businesses, or public kiosks. Without MDM or Apple Configurator, activating ASAM on iOS devices is not feasible.
 
-## Usage
+## 🕹️ Usage
 
 ```typescript
 // import the plugin
@@ -61,7 +63,7 @@ if (!r.success)
     console.error("Failed to disable ASAM");
 ```
 
-## API
+## 🧮 API
 
 <docgen-index>
 
