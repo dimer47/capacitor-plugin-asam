@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-asam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easily integrate Autonomous Single App Mode in your app, allowing it to control Single App Mode sessions for focused, distraction-free user experiences. Ideal for educational, testing, or kiosk applications.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
