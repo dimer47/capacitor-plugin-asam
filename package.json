@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-asam",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Easily integrate Autonomous Single App Mode in your app, allowing it to control Single App Mode sessions for focused, distraction-free user experiences. Ideal for educational, testing, or kiosk applications.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -29,6 +29,7 @@
     "verify": "npm run verify:ios && npm run verify:web",
     "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -destination generic/platform=iOS && cd ..",
     "verify:web": "npm run build",
+    "test": "cd ios && pod install && xcodebuild test -workspace Plugin.xcworkspace -scheme Plugin -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' && cd ..",
     "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
     "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
     "eslint": "eslint . --ext ts",
@@ -41,10 +42,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^3.5.0",
-    "@capacitor/core": "^3.5.0",
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
     "@capacitor/docgen": "^0.0.18",
-    "@capacitor/ios": "^3.5.0",
+    "@capacitor/ios": "^8.0.0",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
@@ -57,7 +58,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@capacitor/core": "^5.0.0"
+    "@capacitor/core": ">=5.0.0"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
