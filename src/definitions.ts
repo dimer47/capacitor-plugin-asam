@@ -29,4 +29,12 @@ export interface AsamPlugin {
    * @returns `{ enabled: true }` if ASAM / Guided Access is currently active.
    */
   isASAMEnabled(): Promise<{ enabled: boolean }>;
+
+  /**
+   * Check whether the device is in supervised mode.
+   * Only supervised iOS devices can use ASAM.
+   *
+   * @returns `{ supervised: true }` if the device is supervised.
+   */
+  isSupervised(): Promise<{ supervised: boolean }>;
 }

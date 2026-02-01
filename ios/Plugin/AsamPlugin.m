@@ -8,4 +8,5 @@ CAP_PLUGIN(AsamPlugin, "Asam",
     CAP_PLUGIN_METHOD(enableASAM, CAPPluginReturnPromise);
     CAP_PLUGIN_METHOD(disableASAM, CAPPluginReturnPromise);
     CAP_PLUGIN_METHOD(isASAMEnabled, CAPPluginReturnPromise);
+    CAP_PLUGIN_METHOD(isSupervised, CAPPluginReturnPromise);
 )

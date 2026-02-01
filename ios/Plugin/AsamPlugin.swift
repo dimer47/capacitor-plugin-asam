@@ -42,4 +42,12 @@ public class AsamPlugin: CAPPlugin {
             ])
         }
     }
+
+    @objc func isSupervised(_ call: CAPPluginCall) {
+        implementation.isSupervised { supervised in
+            call.resolve([
+                "supervised": supervised
+            ])
+        }
+    }
 }

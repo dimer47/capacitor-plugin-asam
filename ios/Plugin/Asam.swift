@@ -33,6 +33,26 @@ public struct SystemGuidedAccessProvider: GuidedAccessProvider {
         self.provider = provider
     }
 
+    /// Check if the device supports ASAM by attempting an enable then disable cycle.
+    @objc public func isSupervised(completion: @escaping (Bool) -> Void) {
+        Task { @MainActor in
+            // If Guided Access is already active, the device is necessarily supervised
+            if provider.isGuidedAccessEnabled {
+                completion(true)
+                return
+            }
+
+            // Attempt to enable ASAM — only succeeds on a supervised device
+            let canEnable = await provider.requestGuidedAccessSession(enabled: true)
+            if canEnable {
+                // Disable immediately
+                let _ = await provider.requestGuidedAccessSession(enabled: false)
+            }
+            print("From Native -> isSupervised probe: \(canEnable)")
+            completion(canEnable)
+        }
+    }
+
     @objc public func setASAM(_ enable: Bool, completion: @escaping (Bool) -> Void) {
         Task { @MainActor in
             let success = await provider.requestGuidedAccessSession(enabled: enable)

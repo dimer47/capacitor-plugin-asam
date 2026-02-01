@@ -19,4 +19,8 @@ export class AsamWeb extends WebPlugin implements AsamPlugin {
   isASAMEnabled(): Promise<{ enabled: boolean }> {
     throw this.unavailable('isASAMEnabled is not available on web.');
   }
+
+  isSupervised(): Promise<{ supervised: boolean }> {
+    return Promise.resolve({ supervised: false });
+  }
 }

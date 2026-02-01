@@ -19,4 +19,8 @@ export class AsamAndroid extends WebPlugin implements AsamPlugin {
   isASAMEnabled(): Promise<{ enabled: boolean }> {
     throw this.unimplemented('isASAMEnabled is not implemented on web.');
   }
+
+  isSupervised(): Promise<{ supervised: boolean }> {
+    return Promise.resolve({ supervised: false });
+  }
 }

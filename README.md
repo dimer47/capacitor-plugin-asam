@@ -85,6 +85,7 @@ if (!r.success)
 * [`enableASAM()`](#enableasam)
 * [`disableASAM()`](#disableasam)
 * [`isASAMEnabled()`](#isasamenabled)
+* [`isSupervised()`](#issupervised)
 
 </docgen-index>
 
@@ -145,6 +146,20 @@ isASAMEnabled() => Promise<{ enabled: boolean; }>
 Check whether Autonomous Single App Mode (ASAM) is currently active on the device.
 
 **Returns:** <code>Promise&lt;{ enabled: boolean; }&gt;</code>
+
+--------------------
+
+
+### isSupervised()
+
+```typescript
+isSupervised() => Promise<{ supervised: boolean; }>
+```
+
+Check whether the device is in supervised mode.
+Only supervised iOS devices can use ASAM.
+
+**Returns:** <code>Promise&lt;{ supervised: boolean; }&gt;</code>
 
 --------------------
 
