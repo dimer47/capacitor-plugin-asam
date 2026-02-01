@@ -97,15 +97,16 @@ if (!r.success)
 setASAM(options: { enable: boolean; }) => Promise<{ success: boolean; }>
 ```
 
-Enable or disable ASAM based on the `enable` parameter.
+Enable or disable Autonomous Single App Mode (ASAM) based on the `enable` parameter.
 
-| Param         | Type                              | Description                        |
-| ------------- | --------------------------------- | ---------------------------------- |
-| **`options`** | <code>{ enable: boolean; }</code> | `true` to enable, `false` to disable |
+| Param         | Type                              | Description                                               |
+| ------------- | --------------------------------- | --------------------------------------------------------- |
+| **`options`** | <code>{ enable: boolean; }</code> | - `enable: true` to activate ASAM, `false` to deactivate. |
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
 --------------------
+
 
 ### enableASAM()
 
@@ -114,10 +115,12 @@ enableASAM() => Promise<{ success: boolean; }>
 ```
 
 Enable Autonomous Single App Mode (ASAM) on the device.
+Shortcut for `setASAM({ enable: true })`.
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
 --------------------
+
 
 ### disableASAM()
 
@@ -126,10 +129,12 @@ disableASAM() => Promise<{ success: boolean; }>
 ```
 
 Disable Autonomous Single App Mode (ASAM) on the device.
+Shortcut for `setASAM({ enable: false })`.
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
 --------------------
+
 
 ### isASAMEnabled()
 
@@ -137,7 +142,7 @@ Disable Autonomous Single App Mode (ASAM) on the device.
 isASAMEnabled() => Promise<{ enabled: boolean; }>
 ```
 
-Returns whether Autonomous Single App Mode (ASAM) is currently enabled on the device.
+Check whether Autonomous Single App Mode (ASAM) is currently active on the device.
 
 **Returns:** <code>Promise&lt;{ enabled: boolean; }&gt;</code>
 
