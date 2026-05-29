@@ -1,6 +1,6 @@
 {
   "name": "@dimer47/capacitor-plugin-asam",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Easily integrate Autonomous Single App Mode in your app, allowing it to control Single App Mode sessions for focused, distraction-free user experiences. Ideal for educational, testing, or kiosk applications.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -64,6 +64,9 @@
   "swiftlint": "@ionic/swiftlint-config",
   "eslintConfig": {
     "extends": "@ionic/eslint-config/recommended"
+  },
+  "overrides": {
+    "lodash": "4.18.1"
   },
   "capacitor": {
     "ios": {
